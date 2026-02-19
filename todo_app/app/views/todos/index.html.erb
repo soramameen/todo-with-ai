@@ -1,0 +1,23 @@
+<h1>Todos</h1>
+
+<div>
+  <a href="/todos/new">
+   新規作成 
+  </a>
+</div>
+<% @todos.each do |todo| %>
+  id: <%= todo.id %>
+  <br>
+  title: <%= todo.title %>
+  <br>
+  description: <%= todo.description %>
+  <br>
+  <div>
+    <a href="/todos/<%= todo.id %>">
+      詳細
+    </a>
+  </div>
+  <br>
+<% end %>
+
+
