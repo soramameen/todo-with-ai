@@ -1,6 +1,6 @@
-<h1>新規作成ページ</h1>
+<h1>更新画面</h1>
 
-<%= form_with model: @todo do |form| %>
+<%= form_with url: "/todos/#{@todo.id}", method: "patch", model: @todo do |form| %>
   <div>
     <%= form.label :title %>
     <%= form.text_field :title %>
@@ -9,7 +9,7 @@
     <%= form.label :description %>
     <%= form.text_field :description %>
   </div>
-  <%= form.button %>
+  <%= form.submit %>
 <% end %>
 
 <a href="/todos/">
