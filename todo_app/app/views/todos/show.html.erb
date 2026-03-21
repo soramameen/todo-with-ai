@@ -10,4 +10,5 @@
 <a href="/todos/<%= @todo.id %>/edit" >
   編集する
 </a>
+<%= button_to "Delete", "/todos/#{@todo.id}", method: :delete %>
 
