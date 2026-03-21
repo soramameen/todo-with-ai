@@ -35,3 +35,28 @@ jobs:
         run: bundle exec rspec
         env:
           RAILS_ENV: test
+  deploy:
+    needs: test
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: コードをチェックアウト
+        uses: actions/checkout@v4
+      - name: SSHの設定
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Rubyのセットアップ
+        uses: ruby/setup-ruby@v1
+        with:
+          working-directory: todo_app
+          ruby-version: .ruby-version
+          bundler-cache: true
+
+      - name: Kamalのデプロイ
+        working-directory: todo_app
+        run: bundle exec kamal deploy
+        env:
+          KAMAL_REGISTRY_PASSWORD: ${{ secrets.KAMAL_REGISTRY_PASSWORD }}
+          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+      
