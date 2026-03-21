@@ -16,7 +16,7 @@ jobs:
       - name: Rubyのセットアップ
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: ./todo_app/ruby-version
+          ruby-version: ./todo_app/.ruby-version
           bundler-cache: true
 
       - name: DBのセットアップ
