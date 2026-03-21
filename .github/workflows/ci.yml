@@ -56,6 +56,7 @@ jobs:
       - name: Kamal secretsファイルを作成
         working-directory: todo_app
         run: |
+          mkdir -p .kamal
           echo "KAMAL_REGISTRY_PASSWORD=$KAMAL_REGISTRY_PASSWORD" >> .kamal/secrets
           echo "RAILS_MASTER_KEY=$RAILS_MASTER_KEY" >> .kamal/secrets
         env:
