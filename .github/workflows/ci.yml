@@ -14,9 +14,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Rubyのセットアップ
-        working-directory: todo_app
         uses: ruby/setup-ruby@v1
         with:
+          working-directory: todo_app
           ruby-version: .ruby-version
           bundler-cache: true
 
