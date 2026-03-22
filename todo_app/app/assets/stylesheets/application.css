@@ -8,3 +8,22 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+body {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.todo-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+}
+
+h1 {
+    color: red;
+    background-color: yellow;
+    padding: 20px;
+    margin: 40px;
+    border: 2px;
+}

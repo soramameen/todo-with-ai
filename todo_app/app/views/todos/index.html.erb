@@ -6,18 +6,14 @@
   </a>
 </div>
 <% @todos.each do |todo| %>
-  id: <%= todo.id %>
-  <br>
-  title: <%= todo.title %>
-  <br>
-  description: <%= todo.description %>
-  <br>
-  <div>
+  <div class="todo-card">
+    <p><id: <%= todo.id %>/p>
+    <p>title: <%= todo.title %></p>
+    <p>description: <%= todo.description %></p>
     <a href="/todos/<%= todo.id %>">
-      詳細
+     詳細
     </a>
   </div>
-  <br>
 <% end %>
 
 
